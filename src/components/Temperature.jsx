@@ -1,4 +1,7 @@
-function Temperature({ celsius, units }) {
+import { useUnits } from "../context/UnitsContext.jsx";
+
+function Temperature({ celsius }) {
+  const { units } = useUnits();
   const degrees = units === "C" ? celsius : (celsius * 9) / 5 + 32;
 
   return (
