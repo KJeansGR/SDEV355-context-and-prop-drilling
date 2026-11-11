@@ -1,17 +1,17 @@
 
 import { createContext } from "react";
+import { useState } from "react";
 
 export const UnitsContext = createContext(null);
 
 export default function UnitsProvider({children}){
-
-    const units = "F";
+    const [units ,setUnits] = useState("F");
 
     return(
-        <UnitsContext 
-        units={units}
+        <UnitsContext.Provider value={{ 
+            units, setUnits }} 
         >
         {children}
-        </UnitsContext>
+        </UnitsContext.Provider>
     )
 }
