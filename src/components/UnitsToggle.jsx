@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { UnitsContext } from "../context/UnitsProvider";
-
+import { useUnits } from "../context/UnitsProvider";
 function UnitsToggle() {
-  const{units,setUnits} = useContext(UnitsContext);
+  const{units,setUnits} = useUnits();
   return (
     <div className="units-toggle">
       <button type="button" onClick={()=>setUnits("F")} className={units == "F" && "units-on"}>

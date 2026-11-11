@@ -1,17 +1,27 @@
 
 import { createContext } from "react";
-import { useState } from "react";
+import { useState,useContext } from "react";
 
 export const UnitsContext = createContext(null);
 
 export default function UnitsProvider({children}){
-    const [units ,setUnits] = useState("F");
+    const [units ,setUnits] = useState();
 
     return(
-        <UnitsContext.Provider value={{ 
+        <UnitsContext value={{ 
             units, setUnits }} 
         >
         {children}
-        </UnitsContext.Provider>
+        </UnitsContext>
     )
+}
+
+export function useUnits(){
+    const val = useContext(UnitsContext);
+
+    if(val == null){
+        throw new Error("useUnits must be used inside unitsProvider");
+    }
+
+    return val;
 }

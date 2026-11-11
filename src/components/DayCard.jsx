@@ -1,6 +1,5 @@
 import { conditionIcon } from "../conditions.js";
 import Temperature from "./Temperature.jsx";
-import { useContext } from "react";
 
 function DayCard({ day }) {
 
