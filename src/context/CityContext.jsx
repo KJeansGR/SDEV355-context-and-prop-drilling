@@ -1,7 +1,7 @@
 import forecasts from "../data/forecasts.json";
 import { createContext, useContext } from "react";
 import { useState } from "react";
-
+/////////////////////////////////////////////
 export const CityContext = createContext(null);
 
 export default function CityProvider({children}){
